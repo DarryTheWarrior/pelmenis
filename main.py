@@ -40,7 +40,6 @@ def calc_performance(data):
     return Ptl_p, Ptl_t, Ptl_f
 
 
-
 def calc_machines(Ptl_p, Ptl_t, Ptl_f, data):
     """Расчёт количества машин."""
     n_pa = math.ceil(Ptl_p / data["ppa"])    # пельменные автоматы
