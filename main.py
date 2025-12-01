@@ -40,3 +40,30 @@ def calc_performance(data):
     return Ptl_p, Ptl_t, Ptl_f
 
 
+
+def calc_machines(Ptl_p, Ptl_t, Ptl_f, data):
+    """Расчёт количества машин."""
+    n_pa = math.ceil(Ptl_p / data["ppa"])    # пельменные автоматы
+    n_tm = math.ceil(Ptl_t / data["ptm"])    # тестомесильные машины
+    n_k = math.ceil(Ptl_f / data["pk"])      # куттеры
+
+    return n_pa, n_tm, n_k
+
+
+def output_results(n_pa, n_tm, n_k):
+    """Вывод результатов."""
+    print("\n=== Результаты расчёта ===")
+    print(f"Пельменные автоматы (nпа): {n_pa}")
+    print(f"Тестомесильные машины (nтм): {n_tm}")
+    print(f"Куттеры (nк): {n_k}")
+
+
+def main():
+    data = input_data()
+    Ptl_p, Ptl_t, Ptl_f = calc_performance(data)
+    n_pa, n_tm, n_k = calc_machines(Ptl_p, Ptl_t, Ptl_f, data)
+    output_results(n_pa, n_tm, n_k)
+
+
+if __name__ == "__main__":
+    main()
