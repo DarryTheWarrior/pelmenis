@@ -2,7 +2,7 @@ import math
 
 
 def input_data():
-    """Ввод всех исходных данных с консоли."""
+
     print("=== Ввод исходных данных ===")
     Qsut = float(input("Суточная выработка продукции Qсут (т): "))
     t = float(input("Продолжительность смены t (ч): "))
@@ -23,7 +23,7 @@ def input_data():
 
 
 def calc_performance(data):
-    """Расчёт производительности линий."""
+
     Qsut = data["Qsut"]
     t = data["t"]
     at = data["at"]
@@ -41,7 +41,7 @@ def calc_performance(data):
 
 
 def calc_machines(Ptl_p, Ptl_t, Ptl_f, data):
-    """Расчёт количества машин."""
+
     n_pa = math.ceil(Ptl_p / data["ppa"])    # пельменные автоматы
     n_tm = math.ceil(Ptl_t / data["ptm"])    # тестомесильные машины
     n_k = math.ceil(Ptl_f / data["pk"])      # куттеры
@@ -50,7 +50,7 @@ def calc_machines(Ptl_p, Ptl_t, Ptl_f, data):
 
 
 def output_results(n_pa, n_tm, n_k):
-    """Вывод результатов."""
+
     print("\n=== Результаты расчёта ===")
     print(f"Пельменные автоматы (nпа): {n_pa}")
     print(f"Тестомесильные машины (nтм): {n_tm}")
